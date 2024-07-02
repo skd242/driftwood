@@ -22,7 +22,7 @@ function init() {
 
     // Load the 3D model
     const loader = new THREE.GLTFLoader();
-    loader.load('https://skd242.github.io/modeltesting/Test01.glb', function (gltf) {
+    loader.load('https://skd242.github.io/driftwood/Wood.glb', function (gltf) {
         scene.add(gltf.scene);
         console.log('Model loaded successfully');
     }, undefined, function (error) {
