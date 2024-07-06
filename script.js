@@ -8,10 +8,10 @@ function init() {
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 1, 2);
 
-    // Create renderer and set background color to white
+    // Create renderer
     renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor(0xffffff, 1); // White background
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xffffff, 1); // Set background color to white
     document.getElementById('3d-container').appendChild(renderer.domElement);
 
     // Add orbit controls
