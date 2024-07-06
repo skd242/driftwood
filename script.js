@@ -10,12 +10,14 @@ function init() {
 
     // Create renderer
     renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setClearColor(0xffffff, 1); // White background
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xffffff, 1); // Set background color to white
     document.getElementById('3d-container').appendChild(renderer.domElement);
 
     // Add orbit controls
     controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.minDistance = 1; // Set the minimum zoom distance
+    controls.maxDistance = 5; // Set the maximum zoom distance
 
     // Add ambient light
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
@@ -23,7 +25,7 @@ function init() {
 
     // Load the 3D model
     const loader = new THREE.GLTFLoader();
-    loader.load('https://skd242.github.io/driftwood/', function (gltf) {
+    loader.load('https://skd242.github.io/driftwood/wood.glb', function (gltf) {
         scene.add(gltf.scene);
         console.log('Model loaded successfully');
     }, undefined, function (error) {
@@ -42,7 +44,7 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    controls.update();
+    controls.update(); // Update controls
     renderer.render(scene, camera);
 }
 
