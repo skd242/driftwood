@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    background-color: white; /* Set background color to white */
+    font-family: Arial, sans-serif; /* Use a sans-serif font */
+    padding: 20px; /* Add some padding for spacing */
+}
+canvas {
+    display: block;
+    margin: auto; /* Center the canvas */
+    border: 1px solid #ccc; /* Add a border for visibility */
+}
+#info {
+    font-size: 14px; /* Font size */
+    text-align: left; /* Left align text */
+    margin-top: 10px; /* Add some top margin */
+}
