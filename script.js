@@ -9,8 +9,8 @@ function init() {
     camera.position.set(0, 1, 2);
 
     // Create renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor(0xffffff, 1); // White background
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(0xffffff, 0); // Set background color to white and make it transparent
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('3d-container').appendChild(renderer.domElement);
 
@@ -25,7 +25,7 @@ function init() {
 
     // Load the 3D model
     const loader = new THREE.GLTFLoader();
-    loader.load('https://skd242.github.io/driftwood/wood.glb', function (gltf) {
+    loader.load('Wood.glb', function (gltf) {
         scene.add(gltf.scene);
         console.log('Model loaded successfully');
     }, undefined, function (error) {
